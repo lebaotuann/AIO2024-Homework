@@ -74,7 +74,7 @@ def min_list(numbers: list):
     Returns:
         float: The minimum of the number list.
     """
-    # return min(numbers)  # Recommendation
+    # Recommendation: return min(numbers)
     if (
         not numbers
         or not isinstance(numbers, list)
@@ -98,7 +98,7 @@ def max_list(numbers: list):
     Returns:
         float: The maximum of the number list.
     """
-    # return max(numbers)  # Recommendation
+    # Recommendation: return max(numbers)  # Recommendation
     if (
         not numbers
         or not isinstance(numbers, list)
@@ -136,10 +136,10 @@ def average(list_nums: list):
     Returns:
         float: The average.
     """
+    # Recommendation: return sum(list_nums) / len(list_nums)
     total_sum = 0
     for i in list_nums:
         total_sum += i
-    # return sum(list_nums) / len(list_nums)
     return total_sum / len(list_nums)
 
 
@@ -194,7 +194,7 @@ def reverse_string(string: str):
     Returns:
         str: The reversed string.
     """
-    # return string[::-1]
+    # Recommendation: return string[::-1]
     output = ""
     for s in string:
         output = s + output
@@ -237,7 +237,7 @@ def remove_duplicates(data: list):
     Returns:
         list: A new list with duplicates removed
     """
-    # return list(set(data))
+    # Recommendation: return list(set(data))
     res = []
     for d in data:
         if d not in res:
