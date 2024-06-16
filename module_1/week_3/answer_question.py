@@ -1,5 +1,5 @@
+# # Answer question.
 # import torch
-#
 # from queue_structure import Queue
 # from softmax import Softmax, SoftmaxStable
 # from stack_structure import Stack
