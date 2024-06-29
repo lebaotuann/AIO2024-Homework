@@ -2,6 +2,8 @@
 
 import math
 
+N_GREATER_THAN_ZERO_MESSAGE = "n must be an integer greater than zero"
+
 
 def factorial(n: int):
     """Calculates the factorial of a non-negative integer n
@@ -35,7 +37,7 @@ def approx_sin(x: float, n: int):
         float: The approximate sine of x.
     """
     if not isinstance(n, int) or n <= 0:
-        raise ValueError("n must be an integer greater than zero")
+        raise ValueError(N_GREATER_THAN_ZERO_MESSAGE)
     approx_value = 0.0
     for i in range(n):
         approx_value += math.pow(-1, i) * math.pow(x, 2 * i + 1) / factorial(2 * i + 1)
@@ -53,7 +55,7 @@ def approx_cos(x: float, n: int):
         float: The approximate cosine of x.
     """
     if not isinstance(n, int) or n <= 0:
-        raise ValueError("n must be an integer greater than zero")
+        raise ValueError(N_GREATER_THAN_ZERO_MESSAGE)
     approx_value = 0.0
     for i in range(n):
         approx_value += math.pow(-1, i) * math.pow(x, 2 * i) / factorial(2 * i)
@@ -71,7 +73,7 @@ def approx_sinh(x: float, n: int):
         float: The approximate sinh of x.
     """
     if not isinstance(n, int) or n <= 0:
-        raise ValueError("n must be an integer greater than zero")
+        raise ValueError(N_GREATER_THAN_ZERO_MESSAGE)
     approx_value = 0.0
     for i in range(n):
         approx_value += math.pow(x, 2 * i + 1) / factorial(2 * i + 1)
@@ -89,7 +91,7 @@ def approx_cosh(x: float, n: int):
         float: The approximate cosh of x.
     """
     if not isinstance(n, int) or n <= 0:
-        raise ValueError("n must be an integer greater than zero")
+        raise ValueError(N_GREATER_THAN_ZERO_MESSAGE)
     approx_value = 0.0
     for i in range(n):
         approx_value += math.pow(x, 2 * i) / factorial(2 * i)
