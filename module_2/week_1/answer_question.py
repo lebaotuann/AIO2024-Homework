@@ -119,8 +119,10 @@ data = df.to_numpy()
 # Question 15
 print("==== Question 15 ================================")
 max_sale = np.max(data[:, 3])
-index = np.where(data[:, 3] == np.max(data[:, 3]))
-print(f"Max: {max_sale} - Index: {index[0][0]}")
+# Not suggest: index = np.where(data[:, 3] == np.max(data[:, 3]))  print(f"Max: {max_sale} - Index: {index[0][0]}")
+condition = data[:, 3] == np.max(data[:, 3])
+index = np.nonzero(condition)[0]
+print(f"Max: {max_sale} - Index: {index[0]}")
 
 # Question 16
 print("==== Question 16 ================================")
@@ -130,8 +132,10 @@ print(average_tv1, average_tv2)
 
 # Question 17
 print("==== Question 17 ================================")
-result = np.where(data[:, 3] >= 20)
-print(len(result[0]))
+# Not suggest: result = np.where(data[:, 3] >= 20)  print(len(result[0]))
+condition = data[:, 3] >= 20
+index = np.nonzero(condition)[0]
+print(len(index))
 
 # Question 18
 print("==== Question 18 ================================")
@@ -168,7 +172,9 @@ for i in range(len(data)):
     differences = np.abs(data[i, 3] - average_sales)
     closest_values[i] = differences
 
-index = np.where(closest_values == np.min(closest_values))
+# Not suggest: index = np.where(closest_values == np.min(closest_values))
+condition = closest_values == np.min(closest_values)
+index = np.nonzero(condition)[0]
 closest_average_sales = data[index][0][3]
 
 scores = np.empty(0)
