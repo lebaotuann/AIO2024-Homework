@@ -1,4 +1,4 @@
-# from data import DATA_DIRECTORY_PATH
+# from constants import DATA_DIRECTORY_PATH
 # from max_kernel import max_kernel
 # from count_character import character_count
 # from count_word import count_word
@@ -44,7 +44,7 @@
 # print(f"Question 2: {character_count('smiles')}")
 #
 # # Q3
-# file_path = DATA_DIRECTORY_PATH + "/module1_week1_P1_data.txt"
+# file_path = DATA_DIRECTORY_PATH + "/data/module1_week2_P1_data.txt"
 # result = count_word(file_path)
 # assert result["who"] == 3
 # print(f"Question 3: {result['man']}")
