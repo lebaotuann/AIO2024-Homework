@@ -54,12 +54,10 @@ train_data = create_train_data()
 prior_probability, conditional_probability, list_x_name = train_naive_bayes(train_data)
 
 print("==== Question 14 ================================")
-# prior_probability = compute_prior_probability(train_data)
 print("P( play tennis = No)", prior_probability[0])
 print("P( play tennis = Yes)", prior_probability[1])
 
 print("==== Question 15 ================================")
-# _, list_x_name = compute_conditional_probability(train_data)
 print("x1 = ", list_x_name[0])
 print("x2 = ", list_x_name[1])
 print("x3 = ", list_x_name[2])

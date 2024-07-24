@@ -54,7 +54,8 @@ def compute_conditional_probability(train_data):
 
 
 def get_index_from_value(feature_name, list_features):
-    return np.where(list_features == feature_name)[0][0]
+    # NOT recommend return np.where(list_features == feature_name)[0][0]
+    return np.nonzero(list_features == feature_name)[0][0]
 
 
 def train_naive_bayes(train_data):
