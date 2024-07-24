@@ -1,8 +1,7 @@
 import numpy as np
+
 from play_tenis_classification import (
     create_train_data,
-    compute_prior_probability,
-    compute_conditional_probability,
     get_index_from_value,
     train_naive_bayes,
     prediction_play_tennis,
@@ -49,7 +48,6 @@ print("b) mean = 3.733 và variance = 0.172")
 print("==== Question 13 ================================")
 print('a) P("Class" = "0" | X) = 1.09 ∗ 10^6 và P("Class" = "1" | X) = 0.3486')
 
-
 train_data = create_train_data()
 prior_probability, conditional_probability, list_x_name = train_naive_bayes(train_data)
 
@@ -93,7 +91,6 @@ if pred:
     print("Ad should go!")
 else:
     print("Ad should not go!")
-
 
 answers = """
 Question 1: A
