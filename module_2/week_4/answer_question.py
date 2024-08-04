@@ -4,7 +4,12 @@ import pandas as pd
 import seaborn as sns
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from basic_probability import compute_mean, compute_median, compute_std, compute_correlation_coefficient
+from basic_probability import (
+    compute_mean,
+    compute_median,
+    compute_std,
+    compute_correlation_coefficient,
+)
 from constants import DATA_DIRECTORY_PATH
 from tabular_data_analysis import correlation
 from text_retrieval import tfidf_search, corr_search
@@ -41,7 +46,9 @@ features = ["TV", "Radio", "Newspaper"]
 for feature_1 in features:
     for feature_2 in features:
         correlation_value = correlation(data[feature_1], data[feature_2])
-        print(f"Correlation between {feature_1} and {feature_2}: {round(correlation_value, 2)}")
+        print(
+            f"Correlation between {feature_1} and {feature_2}: {round(correlation_value, 2)}"
+        )
 
 print("==== Question 7 ================================")
 x = data["Radio"]
@@ -56,11 +63,13 @@ print(correlation_matrix)
 print("==== Question 9 ================================")
 correlation_matrix = data.corr()
 plt.figure(figsize=(10, 8))
-sns.heatmap(correlation_matrix, annot=True, fmt=".2f", linewidth=.5)
-plt.title('Correlation Matrix')
+sns.heatmap(correlation_matrix, annot=True, fmt=".2f", linewidth=0.5)
+plt.title("Correlation Matrix")
 plt.show()
 
-vi_text_retrieval_path = DATA_DIRECTORY_PATH + "/data/module2_week4_vi_text_retrieval.csv"
+vi_text_retrieval_path = (
+    DATA_DIRECTORY_PATH + "/data/module2_week4_vi_text_retrieval.csv"
+)
 vi_data_df = pd.read_csv(vi_text_retrieval_path)
 
 print("==== Question 10 ================================")
