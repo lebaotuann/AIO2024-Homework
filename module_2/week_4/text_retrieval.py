@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 
@@ -24,10 +25,7 @@ def tfidf_search(question, tfidf_vectorizer, context_embedded, top_d=5):
     # Get top k cosine score and index its
     results = []
     for idx in cosine_scores.argsort()[-top_d:][::-1]:
-        doc_score = {
-            "id": idx,
-            "cosine_score": cosine_scores[idx]
-        }
+        doc_score = {"id": idx, "cosine_score": cosine_scores[idx]}
         results.append(doc_score)
     return results
 
@@ -52,14 +50,11 @@ def corr_search(question, tfidf_vectorizer, context_embedded, top_d=5):
     # encoding the query using the same TF-IDF vectorizer
     query_embedded = tfidf_vectorizer.transform([question.lower()])
     # Calculating correlation scores
-    corr_scores = cosine_similarity(query_embedded, context_embedded).flatten()
-    # corr_scores = corr_scores[0][1:]
+    corr_scores = np.corrcoef(query_embedded.toarray()[0], context_embedded.toarray())
+    corr_scores = corr_scores[0][1:]
     # Get top k cosine score and index its
     results = []
     for idx in corr_scores.argsort()[-top_d:][::-1]:
-        doc_score = {
-            "id": idx,
-            "corr_score": corr_scores[idx]
-        }
+        doc_score = {"id": idx, "corr_score": corr_scores[idx]}
         results.append(doc_score)
     return results
