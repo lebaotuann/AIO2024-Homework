@@ -64,6 +64,8 @@ def compute_correlation_coefficient(x, y):
 
     n = len(x)
     numerator = n * np.sum(x * y) - np.sum(x) * np.sum(y)
-    denominator = np.sqrt((n * np.sum(x ** 2) - np.sum(x) ** 2) * (n * np.sum(y ** 2) - np.sum(y) ** 2))
+    denominator = np.sqrt(
+        (n * np.sum(x**2) - np.sum(x) ** 2) * (n * np.sum(y**2) - np.sum(y) ** 2)
+    )
 
     return np.round(numerator / denominator, 2)

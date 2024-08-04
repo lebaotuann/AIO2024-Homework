@@ -17,11 +17,11 @@ def correlation(x, y):
 
     sum_x = sum(x)
     sum_y = sum(y)
-    squared_sum_x = sum_x ** 2
-    squared_sum_y = sum_y ** 2
+    squared_sum_x = sum_x**2
+    squared_sum_y = sum_y**2
 
-    squared_x = [xi ** 2 for xi in x]
-    squared_y = [yi ** 2 for yi in y]
+    squared_x = [xi**2 for xi in x]
+    squared_y = [yi**2 for yi in y]
     sum_squared_x = sum(squared_x)
     sum_squared_y = sum(squared_y)
 
